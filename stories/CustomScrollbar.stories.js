@@ -19,12 +19,8 @@ const Template = () => {
 
   article.insertAdjacentHTML('beforeend', section)
 
-  console.log(article)
   article.classList.add('custom-scrollbar__article')
 
-  const title = document.getElementsByClassName('custom-scrollbar__title')
-  const content = document.getElementsByClassName('custom-scrollbar__content')
-  
   return article
 }
 
