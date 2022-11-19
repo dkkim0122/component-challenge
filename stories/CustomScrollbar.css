@@ -1,7 +1,8 @@
 .custom-scrollbar__article {
+  height: 100vh;
   padding: 100px;
   box-sizing: border-box;
-  overflowY: scroll;
+  overflow-y: scroll;
   background-color: #8ecccc;
 }
 
@@ -16,19 +17,19 @@
   color: white;
 }
 
-::-webkit-scrollbar {
+.custom-scrollbar__article::-webkit-scrollbar {
   width: 20px;
 }
 
-::-webkit-scrollbar-track {
+.custom-scrollbar__article::-webkit-scrollbar-track {
   background-color: #e2eff1;
 }
 
-::-webkit-scrollbar-thumb {
+.custom-scrollbar__article::-webkit-scrollbar-thumb {
   background-color: #42476d;
   border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.custom-scrollbar__article::-webkit-scrollbar-thumb:hover {
   background-color: #5454c5;
 }
