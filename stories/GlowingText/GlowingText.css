@@ -1,0 +1,24 @@
+.glowing-text__container {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glowing-text__container span {
+  color: #111111;
+  font-size: 192px;
+  font-weight: 700;
+}
+
+@keyframes glowing {
+  0% {
+    color: white;
+  }
+
+  100% {
+
+  }
+}
