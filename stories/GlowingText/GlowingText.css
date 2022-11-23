@@ -8,17 +8,33 @@
 }
 
 .glowing-text__container span {
-  color: #111111;
+  /* color: #111111; */
   font-size: 192px;
   font-weight: 700;
+  animation-duration: 2s;
+  animation-name: glowing;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
 }
 
+.glowing-text__container span:nth-of-type(1) { animation-delay: 0.25s; }
+.glowing-text__container span:nth-of-type(2) { animation-delay: 0.5s; }
+.glowing-text__container span:nth-of-type(3) { animation-delay: 0.75s; }
+.glowing-text__container span:nth-of-type(4) { animation-delay: 1s; }
+.glowing-text__container span:nth-of-type(5) { animation-delay: 1.25s; }
+.glowing-text__container span:nth-of-type(6) { animation-delay: 1.5s; }
+.glowing-text__container span:nth-of-type(7) { animation-delay: 1.75s; }
+
 @keyframes glowing {
-  0% {
+  0%, 100% {
     color: white;
+    filter: blur(1px);
+    text-shadow: 0 0 10px cyan;
   }
 
-  100% {
-
+  5%, 95% {
+    color: #111111;
+    filter: blur(0);
+    text-shadow: none;
   }
 }
