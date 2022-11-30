@@ -9,6 +9,7 @@
 
 01. Custom Scrollbar
 02. [Glowing Text](https://github.com/dkkim0122/component-challenge/blob/main/stories/GlowingText/README.md)
+02. [Clip Path Circle](https://github.com/dkkim0122/component-challenge/blob/main/stories/ClipPathCircle/README.md)
 
 ## 참조
 [Jacob CSS](https://css-collection-git-main-jungkyuhyun.vercel.app/?path=/story/jacob-css-introduction--page)

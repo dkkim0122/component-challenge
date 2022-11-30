@@ -7,11 +7,16 @@
   align-items: center;
   color: white;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .clip-path-circle__container-text {
   font-size: 156px;
   color: white;
+  animation-name: moveText;
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 
 .clip-path-circle__circle {
@@ -28,20 +33,24 @@
   top: 0%;
   left: 0%;
   width: 100%;
-  height: 100%;
-}
+  height: 100vh;
+} 
 
 .clip-path-circle__circle-text {
   color: black;
   font-size: 156px;
+  animation-name: moveText;
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 
 @keyframes moveText {
-  from {
-    
+  0%, 100% {
+    transform: translate(-50%, 0)
   }
 
-  to {
-
+  50% {
+    transform: translate(50%, 0)
   }
 }
