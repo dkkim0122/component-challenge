@@ -15,5 +15,27 @@ export const createAnimatedEyesFollowMouseCursor = () => {
     article.appendChild(eye)
   }
 
+  const [leftEye, rightEye] = article.querySelectorAll('.animated-eyes__eye')
+
+  const calculateEyeRotateDegree = (cursorX, cursorY) => {
+    const leftEyeX = leftEye.getBoundingClientRect().left + leftEye.clientWidth / 2
+    const leftEyeY = leftEye.getBoundingClientRect().top + leftEye.clientHeight / 2
+    const rightEyeX = rightEye.getBoundingClientRect().left + rightEye.clientWidth / 2
+    const rightEyeY = rightEye.getBoundingClientRect().top + rightEye.clientHeight / 2
+
+    const leftEyeDegree = Math.atan2(cursorX - leftEyeX, cursorY - leftEyeY)
+    const rightEyeDegree = Math.atan2(cursorX - rightEyeX, cursorY - rightEyeY)
+
+    leftEye.style.transform = `rotate(${leftEyeDegree}rad)`
+    rightEye.style.transform = `rotate(${rightEyeDegree}rad)`
+  }
+
+  article.addEventListener('mousemove', (e) => {
+    const x = e.clientX
+    const y = e.clientY
+    calculateEyeRotateDegree(x, y)
+  })
+
+
   return article
 }
