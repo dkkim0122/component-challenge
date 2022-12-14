@@ -23,8 +23,8 @@ export const createAnimatedEyesFollowMouseCursor = () => {
     const rightEyeX = rightEye.getBoundingClientRect().left + rightEye.clientWidth / 2
     const rightEyeY = rightEye.getBoundingClientRect().top + rightEye.clientHeight / 2
 
-    const leftEyeDegree = Math.atan2(cursorX - leftEyeX, cursorY - leftEyeY)
-    const rightEyeDegree = Math.atan2(cursorX - rightEyeX, cursorY - rightEyeY)
+    const leftEyeDegree = Math.atan2(cursorX - leftEyeX, leftEyeY - cursorY) - Math.PI * 1.5
+    const rightEyeDegree = Math.atan2(cursorX - rightEyeX, rightEyeY - cursorY) - Math.PI * 1.5
 
     leftEye.style.transform = `rotate(${leftEyeDegree}rad)`
     rightEye.style.transform = `rotate(${rightEyeDegree}rad)`
