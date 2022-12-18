@@ -30,12 +30,23 @@ export const createAnimatedEyesFollowMouseCursor = () => {
     rightEye.style.transform = `rotate(${rightEyeDegree}rad)`
   }
 
-  article.addEventListener('mousemove', (e) => {
-    const x = e.clientX
-    const y = e.clientY
-    calculateEyeRotateDegree(x, y)
-  })
+  let throttleCheck
 
+  const throttle = (callback, milliseconds) => {
+    return function() {
+      if(!throttleCheck) {
+        throttleCheck = setTimeout(() => { // 리턴값은 timeoutID => true로 인식
+          callback(...arguments)
+          throttleCheck = false
+        }, milliseconds)
+      }
+    }
+  }
+
+  article.addEventListener(
+    'mousemove', 
+    throttle(e => calculateEyeRotateDegree(e.clientX, e.clientY), 50)
+  )
 
   return article
 }
