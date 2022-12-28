@@ -4,6 +4,10 @@ export const createHoverEffectCard = () => {
   const container = document.createElement('article')
   container.classList.add('hover-effect-card__container')
 
+  const wrapper = document.createElement('div')
+  wrapper.classList.add('hover-effect-card__wrapper')
+  container.appendChild(wrapper)
+
   const createCard = (sequence) => {
     const card = document.createElement('div')
     card.classList.add('hover-effect-card__card')
@@ -28,7 +32,7 @@ export const createHoverEffectCard = () => {
     cardContent.appendChild(cardText)
     cardContent.appendChild(cardButton)
     card.appendChild(cardContent)
-    container.appendChild(card)
+    wrapper.appendChild(card)
   }
 
   const sequenceOfCard = ['First', 'Second', 'Third']

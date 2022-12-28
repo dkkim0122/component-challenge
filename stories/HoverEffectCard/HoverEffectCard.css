@@ -1,15 +1,11 @@
-html {
-  overflow: hidden;
-}
-
-#root {
+.hover-effect-card__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.hover-effect-card__container {
+.hover-effect-card__wrapper {
   width: 1048px;
   height: 100vh;
   display: flex;
