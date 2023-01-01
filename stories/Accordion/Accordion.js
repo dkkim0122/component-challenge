@@ -19,18 +19,18 @@ export const createAccordion = () => {
   accordion.appendChild(accordionHeader)
   accordion.appendChild(accordionContent)
 
-  const handleClickHeader = () => {
-    if (accordionHeader.classList.contains('accordion__header--open')) {
-      accordionHeader.classList.remove('accordion__header--open')
-      accordionContent.classList.remove('accordion__content--open')
+  const handleClickHeader = (header, content) => {
+    if (header.classList.contains('accordion__header--open')) {
+      header.classList.remove('accordion__header--open')
+      content.classList.remove('accordion__content--open')
       return
     }
 
-    accordionHeader.classList.add('accordion__header--open')
-    accordionContent.classList.add('accordion__content--open')
+    header.classList.add('accordion__header--open')
+    content.classList.add('accordion__content--open')
   }
 
-  accordionHeader.addEventListener('click', handleClickHeader)
+  accordionHeader.addEventListener('click', e => handleClickHeader(accordionHeader, accordionContent))
 
   return container
 }
