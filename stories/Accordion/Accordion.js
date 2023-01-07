@@ -13,6 +13,7 @@ export const createAccordion = () => {
 
   const accordionContent = document.createElement('main')
   accordionContent.classList.add('accordion__content')
+  accordionContent.classList.add('accordion__content--close')
   accordionContent.innerHTML = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptates quae nostrum totam quaerat, commodi asperiores ullam. Neque enim beatae, cum, optio, tempora autem est a sint vitae ipsum debitis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptates quae nostrum totam quaerat, commodi asperiores ullam. Neque enim beatae, cum, optio, tempora autem est a sint vitae ipsum debitis!'
   
   container.appendChild(accordion)
@@ -20,17 +21,12 @@ export const createAccordion = () => {
   accordion.appendChild(accordionContent)
 
   const handleClickHeader = (header, content) => {
-    if (header.classList.contains('accordion__header--open')) {
-      header.classList.remove('accordion__header--open')
-      content.classList.remove('accordion__content--open')
-      return
-    }
-
-    header.classList.add('accordion__header--open')
-    content.classList.add('accordion__content--open')
+    header.classList.toggle('accordion__header--open')
+    content.classList.toggle('accordion__content--open')
+    content.classList.toggle('accordion__content--close')
   }
 
-  accordionHeader.addEventListener('click', e => handleClickHeader(accordionHeader, accordionContent))
+  accordionHeader.addEventListener('click', () => handleClickHeader(accordionHeader, accordionContent))
 
   return container
 }
