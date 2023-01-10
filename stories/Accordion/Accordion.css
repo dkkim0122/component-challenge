@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -13,6 +14,7 @@
   width: 600px;
   cursor: pointer;
   position: relative;
+  margin: 1px 0px;
 }
 
 .accordion__header {
@@ -43,39 +45,22 @@
   align-items: center;
 }
 
-.accordion__content {
+.accordion__content-wrapper {
+  padding: 0px;
   background-color: white;
   overflow-y: scroll;
+  transition: height 0.5s;
+}
+
+.accordion__content {
   padding: 8px 16px;
-  transition: all 0.5s;
 }
 
-.accordion__content--open {
-  display: block;
-  animation: appear 0.2s linear;
+.accordion__content-wrapper--open {
+  height: 100px;  
 }
 
-.accordion__content--close {
-  display: none;
-  animation: disappear 0.2s linear;
-}
-
-@keyframes appear {
-  0% {
-    height: 0;
-  }
-
-  100% {
-    height: 100px;
-  }
-}
-
-@keyframes disappear {
-  0% {
-    height: 100px;
-  }
-
-  100% {
-    height: 0;
-  }
+.accordion__content-wrapper--close {
+  height: 0px;
+  padding: 0;
 }
