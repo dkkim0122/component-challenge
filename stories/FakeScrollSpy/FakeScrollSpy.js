@@ -17,18 +17,16 @@ export const createFakeScrollSpy = () => {
 
   const main = document.createElement('main')
   const mainSections = `
-  <ul>
-    <li class="section"><span>Home Section</span></li>
-    <li class="section"><span>About Section</span></li>
-    <li class="section"><span>Services Section</span></li>
-    <li class="section"><span>Portfolio Section</span></li>
-    <li class="section"><span>Contact Section</span></li>
-  </ul>
+    <section id="home" class="section-area"><span>Home Section</span></section>
+    <section id="about" class="section-area"><span>About Section</span></section>
+    <section id="services" class="section-area"><span>Services Section</span></section>
+    <section id="portfolio" class="section-area"><span>Portfolio Section</span></section>
+    <section id="contact" class="section-area"><span>Contact Section</span></section>
   `
   main.innerHTML = mainSections
 
-  container.appendChild(nav)
   container.appendChild(main)
+  container.appendChild(nav)
 
   return container
 }
